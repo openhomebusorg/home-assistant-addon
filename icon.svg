@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- Orange circle background -->
+  <circle cx="128" cy="128" r="128" fill="#ff5c00"/>
+  <!-- House silhouette -->
+  <path d="M204 190C204 195.5 199.5 200 194 200H62C56.5 200 52 195.5 52 190V136C52 130.5 55 122.4 59 118.4L121 56.4C125 52.4 131 52.4 135 56.4L197 118.4C201 122.4 204 130.5 204 136V190Z" fill="white" opacity=".95"/>
+  <!-- Bus backbone -->
+  <rect x="96" y="106" width="8" height="86" rx="4" fill="#ff5c00"/>
+  <!-- Tap 1 + node -->
+  <rect x="96" y="114" width="64" height="8" rx="4" fill="#ff5c00"/>
+  <circle cx="168" cy="118" r="9" fill="#ff5c00"/>
+  <!-- Tap 2 + node -->
+  <rect x="96" y="144" width="64" height="8" rx="4" fill="#ff5c00"/>
+  <circle cx="168" cy="148" r="9" fill="#ff5c00"/>
+  <!-- Tap 3 + node -->
+  <rect x="96" y="174" width="64" height="8" rx="4" fill="#ff5c00"/>
+  <circle cx="168" cy="178" r="9" fill="#ff5c00"/>
+</svg>

@@ -1,0 +1,43 @@
+# OpenHomeBus Home Assistant Add-on Configuration
+# https://developers.home-assistant.io/docs/add-ons/configuration
+name: OpenHomeBus
+description: Management dashboard for the OpenHomeBus system
+version: "0.4.20"
+slug: openhomebus
+url: https://github.com/rathlinus/OpenHomeBus
+
+arch:
+  - amd64
+  - aarch64
+  - armv7
+
+hassio_api: true
+auth_api: true
+
+ingress: true
+ingress_port: 0
+panel_icon: mdi:transit-connection-variant
+panel_title: OpenHomeBus
+
+host_network: true
+
+discovery:
+  - mqtt
+
+options:
+  log_level: "INFO"
+  mqtt_broker: ""
+  mqtt_port: 1883
+  mqtt_username: ""
+  mqtt_password: ""
+
+schema:
+  log_level: list(DEBUG|INFO|WARNING|ERROR)
+  mqtt_broker: str?
+  mqtt_port: int(1,65535)?
+  mqtt_username: str?
+  mqtt_password: password?
+
+init: false
+startup: services
+boot: auto

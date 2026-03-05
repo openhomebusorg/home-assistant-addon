@@ -1,0 +1,16 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# OpenHomeBus Dashboard — S6 run script
+# ==============================================================================
+
+# Read add-on options
+export OHB_PORT=$(bashio::addon.ingress_port)
+export OHB_DATA_DIR="/data"
+
+bashio::log.info "Starting OpenHomeBus Dashboard on port ${OHB_PORT}..."
+
+cd /opt/ohb || true
+
+exec python3 -m ohb_dashboard \
+    --port "${OHB_PORT}" \
+    --host 0.0.0.0

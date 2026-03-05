@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="480" height="120">
+  <!-- House icon -->
+  <path d="M78 86C78 89.3 75.3 92 72 92H18C14.7 92 12 89.3 12 86V56C12 52.7 13.8 47.2 16.4 44.6L42.4 18.6C45 16 49 16 51.6 18.6L77.6 44.6C80.2 47.2 82 52.7 82 56V86Z" fill="#ff5c00"/>
+  <!-- Bus backbone -->
+  <rect x="33" y="42" width="5" height="44" rx="2.5" fill="white"/>
+  <!-- Tap 1 -->
+  <rect x="33" y="47" width="28" height="5" rx="2.5" fill="white"/>
+  <circle cx="65" cy="49.5" r="5" fill="white"/>
+  <!-- Tap 2 -->
+  <rect x="33" y="62" width="28" height="5" rx="2.5" fill="white"/>
+  <circle cx="65" cy="64.5" r="5" fill="white"/>
+  <!-- Tap 3 -->
+  <rect x="33" y="77" width="28" height="5" rx="2.5" fill="white"/>
+  <circle cx="65" cy="79.5" r="5" fill="white"/>
+  <!-- Text: "Open" in dark + "Home" in orange + "Bus" in dark -->
+  <text x="100" y="70" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="40" font-weight="800" letter-spacing="-0.02em" fill="#1a1a1a">Open<tspan fill="#ff5c00">Home</tspan>Bus</text>
+</svg>

@@ -1,0 +1,6 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# OpenHomeBus Dashboard — S6 finish script (clean shutdown)
+# ==============================================================================
+
+bashio::log.info "OpenHomeBus Dashboard stopped"
