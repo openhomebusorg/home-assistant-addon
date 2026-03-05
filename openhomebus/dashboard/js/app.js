@@ -231,7 +231,9 @@
       const online = c.online;
       const statusCls = online ? "online" : "offline";
       const statusTxt = online ? "Online" : "Offline";
-      const linkLabel = c.link_type ? c.link_type.charAt(0).toUpperCase() + c.link_type.slice(1) : "--";
+      const linkLabel = c.link_type
+        ? c.link_type.charAt(0).toUpperCase() + c.link_type.slice(1)
+        : "--";
       const ipLabel = c.ip_address || "--";
 
       card.innerHTML = `
@@ -282,9 +284,11 @@
         : '<span class="ctrl-status offline">Offline</span>';
       $("detail-uptime").textContent = fmtUptime(c.uptime_s);
       $("detail-fw").textContent = c.fw_version || "";
-      const linkType = c.link_type ? c.link_type.charAt(0).toUpperCase() + c.link_type.slice(1) : '--';
-      $('detail-link').textContent = linkType;
-      $('detail-ip').textContent = c.ip_address || '--';
+      const linkType = c.link_type
+        ? c.link_type.charAt(0).toUpperCase() + c.link_type.slice(1)
+        : "--";
+      $("detail-link").textContent = linkType;
+      $("detail-ip").textContent = c.ip_address || "--";
       const heapPct = c.heap_usage_pct;
       $("detail-heap").textContent =
         heapPct != null ? heapPct.toFixed(1) + "%" : "";
