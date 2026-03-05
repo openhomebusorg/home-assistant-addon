@@ -2,7 +2,7 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration
 name: OpenHomeBus
 description: Management dashboard for the OpenHomeBus system
-version: "0.4.20"
+version: "0.4.21"
 slug: openhomebus
 url: https://github.com/rathlinus/OpenHomeBus
 
