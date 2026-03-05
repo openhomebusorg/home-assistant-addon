@@ -110,6 +110,8 @@ class ControllerStatus:
     uptime_s: int = 0
     fw_version: str = ""
     wifi_rssi: int = 0
+    link_type: str = ""
+    ip_address: str = ""
     free_heap: int = 0
     total_heap: int = 0
     cpu_temp_c: float = 0.0
@@ -161,6 +163,8 @@ class ControllerStatus:
             "fw_version": self.fw_version,
             "wifi_rssi": self.wifi_rssi,
             "wifi_quality": self._rssi_to_quality(),
+            "link_type": self.link_type,
+            "ip_address": self.ip_address,
             "free_heap": self.free_heap,
             "total_heap": self.total_heap,
             "heap_usage_pct": self.heap_usage_pct,
@@ -246,6 +250,8 @@ class DiagnosticsManager:
         ctrl.uptime_s = data.get("uptime", ctrl.uptime_s)
         ctrl.fw_version = data.get("fw_version", ctrl.fw_version)
         ctrl.wifi_rssi = data.get("wifi_rssi", ctrl.wifi_rssi)
+        ctrl.link_type = data.get("link", ctrl.link_type)
+        ctrl.ip_address = data.get("ip", ctrl.ip_address)
         ctrl.free_heap = data.get("free_heap", ctrl.free_heap)
         ctrl.total_heap = data.get("total_heap", ctrl.total_heap)
         ctrl.cpu_temp_c = data.get("cpu_temp", ctrl.cpu_temp_c)

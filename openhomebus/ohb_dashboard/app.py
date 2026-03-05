@@ -575,6 +575,8 @@ async def api_controllers_summary(request: web.Request) -> web.Response:
                 "fw_version": dev.fw_version,
                 "wifi_rssi": 0,
                 "wifi_quality": "",
+                "link_type": "",
+                "ip_address": "",
                 "free_heap": 0,
                 "total_heap": 0,
                 "heap_usage_pct": 0,

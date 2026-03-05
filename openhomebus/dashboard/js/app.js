@@ -231,8 +231,8 @@
       const online = c.online;
       const statusCls = online ? "online" : "offline";
       const statusTxt = online ? "Online" : "Offline";
-      const wifi = c.wifi_quality || "";
-      const wCls = wifiClass(c.wifi_quality);
+      const linkLabel = c.link_type ? c.link_type.charAt(0).toUpperCase() + c.link_type.slice(1) : "--";
+      const ipLabel = c.ip_address || "--";
 
       card.innerHTML = `
         <div class="ctrl-card-header">
@@ -243,7 +243,8 @@
           online
             ? `<div class="ctrl-card-stats">
           <div class="ctrl-stat"><span class="ctrl-stat-label">Uptime</span><span class="ctrl-stat-value">${fmtUptime(c.uptime_s)}</span></div>
-          <div class="ctrl-stat"><span class="ctrl-stat-label">WiFi</span><span class="ctrl-stat-value ${wCls}">${esc(String(wifi))}</span></div>
+          <div class="ctrl-stat"><span class="ctrl-stat-label">Connection</span><span class="ctrl-stat-value">${esc(linkLabel)}</span></div>
+          <div class="ctrl-stat"><span class="ctrl-stat-label">IP</span><span class="ctrl-stat-value mono">${esc(ipLabel)}</span></div>
           <div class="ctrl-stat"><span class="ctrl-stat-label">Nodes</span><span class="ctrl-stat-value">${c.active_nodes ?? ""}</span></div>
           <div class="ctrl-stat"><span class="ctrl-stat-label">Firmware</span><span class="ctrl-stat-value">${esc(c.fw_version || "")}</span></div>
         </div>`
@@ -281,11 +282,9 @@
         : '<span class="ctrl-status offline">Offline</span>';
       $("detail-uptime").textContent = fmtUptime(c.uptime_s);
       $("detail-fw").textContent = c.fw_version || "";
-      const wCls = wifiClass(c.wifi_quality);
-      $("detail-wifi").innerHTML =
-        c.wifi_rssi != null
-          ? `<span class="${wCls}">${c.wifi_rssi} dBm (${esc(c.wifi_quality || "")})</span>`
-          : "";
+      const linkType = c.link_type ? c.link_type.charAt(0).toUpperCase() + c.link_type.slice(1) : '--';
+      $('detail-link').textContent = linkType;
+      $('detail-ip').textContent = c.ip_address || '--';
       const heapPct = c.heap_usage_pct;
       $("detail-heap").textContent =
         heapPct != null ? heapPct.toFixed(1) + "%" : "";
