@@ -703,7 +703,8 @@
         </div>
         ${
           provisioned
-            ? '<span class="badge badge-connected"><i data-lucide="check-circle" class="icon-sm"></i> Connected</span>'
+            ? `<span class="badge badge-connected"><i data-lucide="check-circle" class="icon-sm"></i> Connected</span>
+               <button class="btn btn-outline btn-sm btn-prov" data-ip="${escA(ctrl.ip)}"><i data-lucide="refresh-cw" class="icon-sm"></i> Re-provision</button>`
             : `<button class="btn btn-primary btn-sm btn-prov" data-ip="${escA(ctrl.ip)}"><i data-lucide="send" class="icon-sm"></i> Provision</button>`
         }`;
       if (provisioned) card.classList.add("scan-card--connected");
